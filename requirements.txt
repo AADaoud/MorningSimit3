@@ -1,0 +1,10 @@
+openai
+bs4
+requests
+base64
+json
+selenium
+pathlib
+__future__
+logging
+typing_extensions
