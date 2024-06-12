@@ -3,3 +3,4 @@ bs4
 selenium
 streamlit
 webdriver-manager
+seleniumbase
