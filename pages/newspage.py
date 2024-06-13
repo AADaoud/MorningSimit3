@@ -67,8 +67,7 @@ def summarizeArticle():
     
 
 if not st.session_state.scrapedArticle:
-    print("It seems like summarizeArticle() failed")
-    # summarizeArticle()
+    summarizeArticle()
     # Display chat history
     for message in st.session_state.messages[1:]:
         with st.chat_message(message["role"]):
