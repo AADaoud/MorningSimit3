@@ -87,7 +87,7 @@ st.session_state.articleList = news
 
 i = 0
 for article in news['articles']:
-    with st.container(border=True):
+    with st.container():
         st.write('###', article['title'])
         if article['urlToImage']:
             st.image(article['urlToImage'])

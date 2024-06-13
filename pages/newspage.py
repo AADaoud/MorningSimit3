@@ -23,7 +23,6 @@ if 'initialQuestion' not in st.session_state:
     st.session_state.initialQuestion = True
 
 
-
 if 'scrapedArticle' not in st.session_state:
     st.session_state.scrapedArticle = False
 
@@ -68,7 +67,8 @@ def summarizeArticle():
     
 
 if not st.session_state.scrapedArticle:
-    summarizeArticle()
+    print("It seems like summarizeArticle() failed")
+    # summarizeArticle()
     # Display chat history
     for message in st.session_state.messages[1:]:
         with st.chat_message(message["role"]):

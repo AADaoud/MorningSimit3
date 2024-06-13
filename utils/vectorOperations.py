@@ -111,14 +111,15 @@ def queryStore():
     messages = st.session_state.messages
     print(messages)
     vector_store = createVectorStore()
+    print(f"Created vector store with ID {vector_store.id}")
     assistant = createAssistant(vector_store)
-    threadID = st.session_state.threadID
-    
+
     if st.session_state.initialQuestion:
         thread = createThread(messages)
-    elif not st.session_state.initialQuestion:
+        st.session_state.threadID = thread.id
+    elif not st.session_state.initialQuestion and st.session_state.threadID:
         appendToThread(messages)
-        thread = client.beta.threads.retrieve(thread_id=threadID)
+        thread = client.beta.threads.retrieve(thread_id=st.session_state.threadID)
     
     st.session_state.initialQuestion = False
     print("entered stream")
